@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakeview Events</title>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-49YV87CD4W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-49YV87CD4W');
+</script>
+
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f8fb;
+    color: #18324a;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  h1 {
+    color: #082f5b;
+    font-size: clamp(30px, 5vw, 44px);
+    margin-bottom: 10px;
+  }
+  p {
+    color: #667788;
+    font-size: 17px;
+    margin-bottom: 34px;
+  }
+  .month-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .month-link {
+    display: block;
+    background: #ffffff;
+    border: 1px solid rgba(8,47,91,.08);
+    border-radius: 10px;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: #082f5b;
+    font-weight: 800;
+    font-size: 17px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .month-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,.10);
+  }
+</style>
+</head>
+<body>
+
+  <h1>Lakeview Events</h1>
+  <p>Lakeview Assembly of God &bull; Lake Milton, Ohio</p>
+
+  <div class="month-list">
+    <a class="month-link" href="/september.html">September Events</a>
+    <!-- Add a new line here each month, e.g.: -->
+    <!-- <a class="month-link" href="/october.html">October Events</a> -->
+  </div>
+
+</body>
+</html>
