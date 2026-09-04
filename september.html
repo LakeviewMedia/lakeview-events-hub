@@ -22,25 +22,8 @@
   gtag('js', new Date());
 
   gtag('config', 'G-49YV87CD4W', {
-    page_title: 'September Events | Lakeview Assembly',
-    page_path: '/september.html'
+    page_title: 'September Events | Lakeview Assembly'
   });
-
-
-  /* =====================================
-     EVENT CLICK TRACKING
-  ====================================== */
-
-  function trackEventClick(eventName, eventTitle, actionType, linkUrl) {
-
-    gtag('event', eventName, {
-      event_title: eventTitle,
-      action_type: actionType,
-      link_url: linkUrl,
-      event_month: 'September'
-    });
-
-  }
 </script>
 
 
@@ -194,7 +177,6 @@ body {
 
 /* =================================
    FEATURED EVENT
-   SPANS BOTH COLUMNS
 ================================= */
 
 .event-card.featured {
@@ -204,7 +186,6 @@ body {
 
 /* =================================
    EVENT IMAGES
-   FULL IMAGE - NO CROPPING
 ================================= */
 
 .event-image {
@@ -438,7 +419,7 @@ body {
 
 
     <!-- =================================
-         FEATURED - OCC SHOEBOX
+         OCC SHOEBOX
     ================================== -->
 
     <article class="event-card featured">
@@ -478,7 +459,6 @@ body {
           🙏 Pray for a child.<br>
           🌎 Share God’s love.<br>
           ❤️ Make an eternal impact.
-          <br><br>
         </p>
 
         <a
@@ -486,12 +466,9 @@ body {
           href="https://sp-comm-arkfiles.s3.theark.cloud/website/pdfs/OCC/Gift-Suggestions/Gift-Suggestions-PDF.pdf?_gl=1*1s0se8l*_gcl_au*MTY2MTc3MDYzLjE3ODcwNzYwNzQ"
           target="_blank"
           rel="noopener"
-          onclick="trackEventClick(
-            'occ_link_click',
-            'OCC Shoebox Collection',
-            'view_suggested_items',
-            this.href
-          );"
+          data-ga-event="occ_link_click"
+          data-ga-title="OCC Shoebox Collection"
+          data-ga-action="view_suggested_items"
         >
           VIEW SUGGESTED ITEMS
         </a>
@@ -535,7 +512,7 @@ body {
 
 
     <!-- =================================
-         NO YOUTH - FAIR DAY
+         CANFIELD FAIR DAY
     ================================== -->
 
     <article class="event-card">
@@ -754,12 +731,9 @@ body {
           href="https://brushfire.com/ohioministry/timeapart2026/628586/register"
           target="_blank"
           rel="noopener"
-          onclick="trackEventClick(
-            'time_apart_registration_click',
-            'Time Apart Women\'s Conference',
-            'registration',
-            this.href
-          );"
+          data-ga-event="time_apart_registration_click"
+          data-ga-title="Time Apart Women's Conference"
+          data-ga-action="registration"
         >
           REGISTER
         </a>
@@ -783,6 +757,49 @@ body {
 </footer>
 
 
+<!-- =====================================
+     GA4 EXTERNAL LINK TRACKING
+====================================== -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const trackedLinks = document.querySelectorAll('[data-ga-event]');
+
+  trackedLinks.forEach(function(link) {
+
+    link.addEventListener('click', function() {
+
+      const eventName = this.dataset.gaEvent;
+      const eventTitle = this.dataset.gaTitle;
+      const actionType = this.dataset.gaAction;
+      const linkUrl = this.href;
+
+      gtag('event', eventName, {
+
+        event_title: eventTitle,
+        action_type: actionType,
+        event_month: 'September',
+        link_url: linkUrl,
+        link_text: this.innerText.trim()
+
+      });
+
+      console.log(
+        'GA4 Event Sent:',
+        eventName,
+        eventTitle
+      );
+
+    });
+
+  });
+
+});
+
+</script>
+
+
 </body>
 </html>
-```
