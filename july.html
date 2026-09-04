@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>July Events | Lakeview Assembly</title>
+
+<!-- =====================================
+     GOOGLE ANALYTICS 4
+====================================== -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-49YV87CD4W"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+
+  gtag('config', 'G-49YV87CD4W', {
+    page_title: 'July Events | Lakeview Assembly'
+  });
+</script>
+
+
+<style>
+
+/* =================================
+   GLOBAL
+================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f8fb;
+  color: #18324a;
+}
+
+
+/* =================================
+   JULY HERO
+================================= */
+
+.month-hero {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #082f5b;
+}
+
+.month-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* =================================
+   INTRODUCTION
+================================= */
+
+.intro {
+  width: 100%;
+  text-align: center;
+  padding: 42px 20px 32px;
+  background: #ffffff;
+}
+
+.eyebrow {
+  color: #f7941d;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  margin-bottom: 8px;
+}
+
+.intro h1 {
+  margin: 0 0 12px;
+  color: #082f5b;
+  font-size: clamp(34px, 5vw, 50px);
+}
+
+.intro p {
+  max-width: 700px;
+  margin: auto;
+  color: #667788;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* =================================
+   EVENTS SECTION
+================================= */
+
+.events-section {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 40px 20px 55px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  margin: 0 0 8px;
+  color: #082f5b;
+  font-size: 30px;
+}
+
+.section-title p {
+  margin: 0;
+  color: #667788;
+}
+
+
+/* =================================
+   EVENT GRID
+================================= */
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+}
+
+
+/* =================================
+   EVENT CARDS
+================================= */
+
+.event-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+
+  border: 1px solid rgba(8,47,91,.08);
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.10);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 14px 32px rgba(0,0,0,.16);
+}
+
+
+/* =================================
+   FEATURED EVENT
+================================= */
+
+.event-card.featured {
+  grid-column: 1 / -1;
+}
+
+
+/* =================================
+   EVENT IMAGES
+================================= */
+
+.event-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: #ffffff;
+}
+
+.event-card.featured .event-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+}
+
+
+/* =================================
+   EVENT INFORMATION
+================================= */
+
+.event-info {
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+}
+
+.event-date {
+  color: #f7941d;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: .08em;
+
+  margin-bottom: 7px;
+}
+
+.event-title {
+  color: #082f5b;
+
+  font-size: 25px;
+  line-height: 1.25;
+
+  margin: 0 0 10px;
+}
+
+.event-location {
+  color: #082f5b;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  margin: 0 0 12px;
+}
+
+.event-description {
+  color: #667788;
+
+  line-height: 1.6;
+
+  font-size: 15px;
+
+  margin: 0 0 20px;
+
+  flex-grow: 1;
+}
+
+
+/* =================================
+   BUTTON
+================================= */
+
+.event-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  align-self: flex-start;
+
+  margin-top: auto;
+
+  background: #f7941d;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  padding: 12px 20px;
+
+  border-radius: 8px;
+
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.event-button:hover {
+  background: #df7e0c;
+
+  transform: translateY(-1px);
+}
+
+
+/* =================================
+   EVENT NOTE
+================================= */
+
+.event-note {
+  display: inline-block;
+
+  align-self: flex-start;
+
+  margin-top: auto;
+
+  padding: 11px 0;
+
+  color: #082f5b;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+  width: 100%;
+
+  margin: 0;
+
+  padding: 28px 20px;
+
+  background: #082f5b;
+
+  color: rgba(255,255,255,.88);
+
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .event-card.featured {
+    grid-column: auto;
+  }
+
+  .intro {
+    padding: 32px 18px 26px;
+  }
+
+  .intro h1 {
+    font-size: 34px;
+  }
+
+  .intro p {
+    font-size: 16px;
+  }
+
+  .events-section {
+    padding: 30px 14px 40px;
+  }
+
+  .section-title h2 {
+    font-size: 27px;
+  }
+
+  .event-info {
+    padding: 19px;
+  }
+
+  .event-title {
+    font-size: 22px;
+  }
+
+  .footer {
+    padding: 24px 15px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     JULY HERO
+====================================== -->
+
+<section class="month-hero">
+
+  <img
+    src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/7%20-%20July/July%20Events.jpg"
+    alt="July Events">
+
+</section>
+
+
+<!-- =====================================
+     INTRODUCTION
+====================================== -->
+
+<section class="intro">
+
+  <div class="eyebrow">
+    Lakeview Assembly of God
+  </div>
+
+  <h1>
+    What's Happening in July
+  </h1>
+
+  <p>
+    There's something for everyone at Lakeview.
+    Check out what's happening this month and select
+    an event below for more information or registration.
+  </p>
+
+</section>
+
+
+
+<!-- =====================================
+     JULY EVENTS
+====================================== -->
+
+<section class="events-section">
+
+  <div class="section-title">
+
+    <h2>
+      July Events
+    </h2>
+
+    <p>
+      Check out what's coming up at Lakeview.
+    </p>
+
+  </div>
+
+
+  <div class="event-grid">
+
+
+    <!-- =================================
+         EVENT 1
+    ================================== -->
+
+    <article class="event-card">
+
+      <!--
+      <img
+        class="event-image"
+        src="PASTE RAW GITHUB IMAGE URL HERE"
+        alt="Event Name">
+      -->
+
+      <div class="event-info">
+
+        <div class="event-date">
+          EVENT DATE • EVENT TIME
+        </div>
+
+        <h3 class="event-title">
+          Event Name
+        </h3>
+
+        <!-- OPTIONAL LOCATION
+
+        <div class="event-location">
+          Event Location
+        </div>
+
+        -->
+
+        <p class="event-description">
+          Add the event description here.
+        </p>
+
+        <!-- OPTIONAL BUTTON
+
+        <a
+          class="event-button"
+          href="REGISTRATION LINK"
+          target="_blank"
+          rel="noopener"
+          data-ga-event="event_registration_click"
+          data-ga-title="Event Name"
+          data-ga-action="registration"
+        >
+          REGISTER
+        </a>
+
+        -->
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================
+         EVENT 2
+    ================================== -->
+
+    <article class="event-card">
+
+      <!--
+      <img
+        class="event-image"
+        src="PASTE RAW GITHUB IMAGE URL HERE"
+        alt="Event Name">
+      -->
+
+      <div class="event-info">
+
+        <div class="event-date">
+          EVENT DATE • EVENT TIME
+        </div>
+
+        <h3 class="event-title">
+          Event Name
+        </h3>
+
+        <!-- OPTIONAL LOCATION
+
+        <div class="event-location">
+          Event Location
+        </div>
+
+        -->
+
+        <p class="event-description">
+          Add the event description here.
+        </p>
+
+        <!-- OPTIONAL BUTTON
+
+        <a
+          class="event-button"
+          href="REGISTRATION LINK"
+          target="_blank"
+          rel="noopener"
+          data-ga-event="event_registration_click"
+          data-ga-title="Event Name"
+          data-ga-action="registration"
+        >
+          REGISTER
+        </a>
+
+        -->
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================
+         EVENT 3
+    ================================== -->
+
+    <article class="event-card">
+
+      <!--
+      <img
+        class="event-image"
+        src="PASTE RAW GITHUB IMAGE URL HERE"
+        alt="Event Name">
+      -->
+
+      <div class="event-info">
+
+        <div class="event-date">
+          EVENT DATE • EVENT TIME
+        </div>
+
+        <h3 class="event-title">
+          Event Name
+        </h3>
+
+        <p class="event-description">
+          Add the event description here.
+        </p>
+
+        <!-- OPTIONAL BUTTON
+
+        <a
+          class="event-button"
+          href="REGISTRATION LINK"
+          target="_blank"
+          rel="noopener"
+          data-ga-event="event_registration_click"
+          data-ga-title="Event Name"
+          data-ga-action="registration"
+        >
+          REGISTER
+        </a>
+
+        -->
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================
+         EVENT 4
+    ================================== -->
+
+    <article class="event-card">
+
+      <!--
+      <img
+        class="event-image"
+        src="PASTE RAW GITHUB IMAGE URL HERE"
+        alt="Event Name">
+      -->
+
+      <div class="event-info">
+
+        <div class="event-date">
+          EVENT DATE • EVENT TIME
+        </div>
+
+        <h3 class="event-title">
+          Event Name
+        </h3>
+
+        <p class="event-description">
+          Add the event description here.
+        </p>
+
+        <!-- OPTIONAL BUTTON
+
+        <a
+          class="event-button"
+          href="REGISTRATION LINK"
+          target="_blank"
+          rel="noopener"
+          data-ga-event="event_registration_click"
+          data-ga-title="Event Name"
+          data-ga-action="registration"
+        >
+          REGISTER
+        </a>
+
+        -->
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     FOOTER
+====================================== -->
+
+<footer class="footer">
+
+  Lakeview Assembly of God • Lake Milton, Ohio
+
+</footer>
+
+
+
+<!-- =====================================
+     GA4 EXTERNAL LINK TRACKING
+====================================== -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const trackedLinks =
+    document.querySelectorAll('[data-ga-event]');
+
+  trackedLinks.forEach(function(link) {
+
+    link.addEventListener('click', function() {
+
+      const eventName =
+        this.dataset.gaEvent;
+
+      const eventTitle =
+        this.dataset.gaTitle;
+
+      const actionType =
+        this.dataset.gaAction;
+
+      const linkUrl =
+        this.href;
+
+
+      gtag('event', eventName, {
+
+        event_title:
+          eventTitle,
+
+        action_type:
+          actionType,
+
+        event_month:
+          'July',
+
+        link_url:
+          linkUrl,
+
+        link_text:
+          this.innerText.trim()
+
+      });
+
+
+      console.log(
+        'GA4 Event Sent:',
+        eventName,
+        eventTitle
+      );
+
+    });
+
+  });
+
+});
+
+</script>
+
+
+</body>
+</html>
