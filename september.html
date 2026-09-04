@@ -4,743 +4,121 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- =====================================
-     GA4 TRACKING (added)
-     Same Measurement ID as your Google Site
-====================================== -->
+<title>Lakeview Events | Lakeview Assembly</title>
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-49YV87CD4W"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
   gtag('js', new Date());
-  gtag('config', 'G-49YV87CD4W');
+
+  gtag('config', 'G-49YV87CD4W', {
+    page_title: document.title
+  });
+
+  /*
+    Reusable tracking function for month links.
+  */
+  function trackMonthClick(monthName) {
+    gtag('event', 'month_page_click', {
+      month_name: monthName,
+      link_text: monthName + ' Events'
+    });
+  }
 </script>
 
 <style>
-
-/* =================================
-   GLOBAL
-================================= */
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f6f8fb;
-  color: #18324a;
-}
-
-
-/* =================================
-   SEPTEMBER HERO
-================================= */
-
-.september-hero {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: #082f5b;
-}
-
-.september-hero img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-
-/* =================================
-   INTRODUCTION
-================================= */
-
-.intro {
-  width: 100%;
-  text-align: center;
-  padding: 42px 20px 32px;
-  background: #ffffff;
-}
-
-.eyebrow {
-  color: #f7941d;
-  font-size: 13px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  margin-bottom: 8px;
-}
-
-.intro h1 {
-  margin: 0 0 12px;
-  color: #082f5b;
-  font-size: clamp(34px, 5vw, 50px);
-}
-
-.intro p {
-  max-width: 700px;
-  margin: auto;
-  color: #667788;
-  font-size: 17px;
-  line-height: 1.6;
-}
-
-
-/* =================================
-   EVENTS SECTION
-================================= */
-
-.events-section {
-  width: 100%;
-  max-width: 1150px;
-  margin: 0 auto;
-  padding: 40px 20px 55px;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.section-title h2 {
-  margin: 0 0 8px;
-  color: #082f5b;
-  font-size: 30px;
-}
-
-.section-title p {
-  margin: 0;
-  color: #667788;
-}
-
-
-/* =================================
-   EVENT GRID
-================================= */
-
-.event-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
-  align-items: stretch;
-}
-
-
-/* =================================
-   EVENT CARDS
-================================= */
-
-.event-card {
-  background: #ffffff;
-  border-radius: 16px;
-  overflow: hidden;
-
-  border: 1px solid rgba(8,47,91,.08);
-
-  box-shadow:
-    0 8px 25px rgba(0,0,0,.10);
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.event-card:hover {
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 14px 32px rgba(0,0,0,.16);
-}
-
-
-/* =================================
-   FEATURED EVENT
-   SPANS BOTH COLUMNS
-================================= */
-
-.event-card.featured {
-  grid-column: 1 / -1;
-}
-
-
-/* =================================
-   EVENT IMAGES
-   FULL IMAGE - NO CROPPING
-================================= */
-
-.event-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  background: #ffffff;
-}
-
-
-/* =================================
-   EVENT INFORMATION
-================================= */
-
-.event-info {
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.event-date {
-  color: #f7941d;
-  font-size: 13px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  margin-bottom: 7px;
-}
-
-.event-title {
-  color: #082f5b;
-  font-size: 25px;
-  line-height: 1.25;
-  margin: 0 0 10px;
-}
-
-.event-location {
-  color: #082f5b;
-  font-size: 14px;
-  font-weight: 700;
-  margin: 0 0 12px;
-}
-
-.event-description {
-  color: #667788;
-  line-height: 1.6;
-  font-size: 15px;
-  margin: 0 0 20px;
-}
-
-
-/* =================================
-   BUTTON
-================================= */
-
-.event-button {
-  display: inline-block;
-  align-self: flex-start;
-  margin-top: auto;
-
-  background: #f7941d;
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-size: 14px;
-  font-weight: 800;
-
-  padding: 12px 20px;
-  border-radius: 8px;
-
-  transition:
-    background .2s ease,
-    transform .2s ease;
-}
-
-.event-button:hover {
-  background: #df7e0c;
-  transform: translateY(-1px);
-}
-
-
-/* =================================
-   EVENT NOTE
-================================= */
-
-.event-note {
-  display: inline-block;
-  align-self: flex-start;
-  margin-top: auto;
-
-  padding: 11px 0;
-
-  color: #082f5b;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-
-/* =================================
-   FOOTER
-================================= */
-
-.footer {
-  width: 100%;
-  margin: 0;
-  padding: 28px 20px;
-
-  background: #082f5b;
-  color: rgba(255,255,255,.88);
-
-  text-align: center;
-
-  font-size: 14px;
-  font-weight: 500;
-}
-
-
-/* =================================
-   MOBILE
-================================= */
-
-@media (max-width: 700px) {
-
-  .event-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  * {
+    box-sizing: border-box;
   }
 
-  .event-card.featured {
-    grid-column: auto;
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f8fb;
+    color: #18324a;
+    text-align: center;
+    padding: 60px 20px;
   }
 
-  .intro {
-    padding: 32px 18px 26px;
+  h1 {
+    color: #082f5b;
+    font-size: clamp(30px, 5vw, 44px);
+    margin-bottom: 10px;
   }
 
-  .intro h1 {
-    font-size: 34px;
+  p {
+    color: #667788;
+    font-size: 17px;
+    margin-bottom: 34px;
   }
 
-  .intro p {
-    font-size: 16px;
+  .month-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 360px;
+    margin: 0 auto;
   }
 
-  .events-section {
-    padding: 30px 14px 40px;
+  .month-link {
+    display: block;
+    background: #ffffff;
+    border: 1px solid rgba(8,47,91,.08);
+    border-radius: 10px;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: #082f5b;
+    font-weight: 800;
+    font-size: 17px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    transition: transform .15s ease, box-shadow .15s ease;
   }
 
-  .section-title h2 {
-    font-size: 27px;
+  .month-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,.10);
   }
-
-  .event-info {
-    padding: 19px;
-  }
-
-  .event-title {
-    font-size: 22px;
-  }
-
-  .footer {
-    padding: 24px 15px;
-  }
-}
-
 </style>
+
 </head>
 
 <body>
 
-
-<!-- =====================================
-     SEPTEMBER HERO
-====================================== -->
-
-<section class="september-hero">
-
-  <img
-    src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/9%20-%20September/September%20Events.jpg"
-    alt="September Events">
-
-</section>
-
-
-<!-- =====================================
-     INTRODUCTION
-====================================== -->
-
-<section class="intro">
-
-  <div class="eyebrow">
-    Lakeview Assembly of God
-  </div>
-
-  <h1>
-    What's Happening in September
-  </h1>
+  <h1>Lakeview Events</h1>
 
   <p>
-    There's something for everyone at Lakeview.
-    Check out what's happening this month and select
-    an event below for more information or registration.
+    Lakeview Assembly of God &bull; Lake Milton, Ohio
   </p>
 
-</section>
+  <div class="month-list">
 
-
-<!-- =====================================
-     SEPTEMBER EVENTS
-====================================== -->
-
-<section class="events-section">
-
-  <div class="section-title">
-
-    <h2>
+    <a
+      class="month-link"
+      href="september.html"
+      onclick="trackMonthClick('September')"
+    >
       September Events
-    </h2>
+    </a>
 
-    <p>
-      Check out what's coming up at Lakeview.
-    </p>
+    <!--
+    ADD OCTOBER LIKE THIS:
+
+    <a
+      class="month-link"
+      href="october.html"
+      onclick="trackMonthClick('October')"
+    >
+      October Events
+    </a>
+    -->
 
   </div>
-
-
-  <div class="event-grid">
-
-
-  <!-- =================================
-         FEATURED - OCC SHOEBOX
-    ================================== -->
-
-    <article class="event-card featured">
-
-      <img
-        class="event-image"
-        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/11%20-%20November/OCC%202026.jpg"
-        alt="OCC Shoebox Collection">
-
-      <div class="event-info">
-
-        <div class="event-date">
-          All Month
-        </div>
-
-        <h3 class="event-title">
-          OCC Shoebox Collection
-        </h3>
-
-        <p class="event-description">
-          Pack a Shoebox. Share the Gospel. Change a Life. 🎁❤️
-          Operation Christmas Child, a project of Samaritan’s Purse,
-          delivers gift-filled shoeboxes to children in need around
-          the world while sharing the Good News of Jesus Christ.
-          Each shoebox is an opportunity to show God’s love in a
-          tangible way and help bring joy, hope, and the message of
-          the Gospel to a child.
-          <br><br>
-          Everyone can be part of the mission! Fill a shoebox with
-          quality gifts, pray for the child who will receive it,
-          and help us send the love of Jesus around the world—one
-          shoebox at a time.
-          <br><br>
-          🎁 Pack a box.<br>
-          🙏 Pray for a child.<br>
-          🌎 Share God’s love.<br>
-          ❤️ Make an eternal impact.
-          <br><br>
-       
-        </p>
-
-  <a
-          class="event-button"
-          href="https://sp-comm-arkfiles.s3.theark.cloud/website/pdfs/OCC/Gift-Suggestions/Gift-Suggestions-PDF.pdf?_gl=1*1s0se8l*_gcl_au*MTY2MTc3MDYzLjE3ODcwNzYwNzQ"
-          target="_blank"
-          rel="noopener"
-          onclick="gtag('event','outbound_click',{link_url:this.href,link_text:this.innerText.trim(),link_event:'OCC Shoebox Collection'});">
-          VIEW SUGGESTED ITEMS
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <!-- =================================
-         RENT A YOUTH
-    ================================== -->
-
-    <article class="event-card">
-
-      <img
-        class="event-image"
-        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/9%20-%20September/Rent%20a%20Youth.jpg"
-        alt="Rent a Youth">
-
-      <div class="event-info">
-
-        <div class="event-date">
-          Schedule a date and time with Pastor Mikayla
-        </div>
-
-        <h3 class="event-title">
-          Rent a Youth
-        </h3>
-
-        <p class="event-description">
-          Our youth are ready to serve! Whether you need help
-          with yard work, cleaning, organizing, moving items,
-          or other projects, you can “Rent a Youth” to lend a hand.
-          Contact Pastor Mikayla for more information or to schedule a youth!
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- =================================
-         NO YOUTH - FAIR DAY
-    ================================== -->
-
-    <article class="event-card">
-
-      <img
-        class="event-image"
-        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/9%20-%20September/No%20Youth%20Fair%20Day.jpg"
-        alt="No Youth - Canfield Fair Day">
-
-      <div class="event-info">
-
-        <div class="event-date">
-          September 6 • 5:00 PM – 8:00 PM
-        </div>
-
-        <h3 class="event-title">
-          No Youth – Canfield Fair Day
-        </h3>
-
-        <p class="event-description">
-          There will be no regular Upward Youth meeting.
-          Instead, join us at the Canfield Fair! Entrance
-          to the fair will be covered. Food, games, and rides
-          are on your own.
-        </p>
-
-        <span class="event-note">
-          See Pastor Mikayla for more details!
-        </span>
-
-      </div>
-
-    </article>
-
-
-    <!-- =================================
-         BACK TO SCHOOL SUNDAY
-    ================================== -->
-
-    <article class="event-card">
-
-      <img
-        class="event-image"
-        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/9%20-%20September/9-13-26%20Back%20to%20School%20Sunday.jpg"
-        alt="Back to School Sunday">
-
-      <div class="event-info">
-
-        <div class="event-date">
-          September 13
-        </div>
-
-        <h3 class="event-title">
-          Back to School Sunday
-        </h3>
-
-        <p class="event-description">
-          Join us for Back to School Sunday on September 13th!
-          As students, teachers, and school staff begin a new school
-          year, we'll take a special time during service to surround
-          them with prayer and encouragement for the year ahead.
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- =================================
-         BACK TO SCHOOL BASH
-    ================================== -->
-
-    <article class="event-card">
-
-      <img
-        class="event-image"
-        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/9%20-%20September/Back%20to%20School%20Bash.png"
-        alt="Back to School Bash">
-
-      <div class="event-info">
-
-        <div class="event-date">
-          September 13 • 6:00 PM – 8:00 PM
-        </div>
-
-        <h3 class="event-title">
-          Back to School Bash
-        </h3>
-
-        <p class="event-description">
-          School is back, and we're kicking off the new
-          season together! Join Upward Youth for our
-          Back to School Bash featuring games, food,
-          friends, and plenty of fun.
-        </p>
-
-        <span class="event-note">
-          Bring a friend and join us!
-        </span>
-
-      </div>
-
-    </article>
-
-
-    <!-- =================================
-         BACK TO CHURCH SUNDAY
-    ================================== -->
-
-    <article class="event-card">
-
-      <img
-        class="event-image"
-        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/9%20-%20September/Back%20to%20Church%20Sunday.jpg"
-        alt="Back to Church Sunday">
-
-      <div class="event-info">
-
-        <div class="event-date">
-          September 20
-        </div>
-
-        <h3 class="event-title">
-          Back to Church Sunday
-        </h3>
-
-        <p class="event-description">
-          Join us for National Back to Church Sunday!
-          This year's theme, “Find Your Place,” is an invitation
-          to reconnect, find community, and discover the love,
-          healing, hope, and belonging found in Jesus and His Church.
-          Plus, enjoy a special coffee truck!
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <!-- =================================
-         SEE YOU AT THE POLE
-    ================================== -->
-
-    <article class="event-card">
-
-      <img
-        class="event-image"
-        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/9%20-%20September/See%20You%20At%20The%20Pole%20(1).jpg"
-        alt="See You at the Pole">
-
-      <div class="event-info">
-
-        <div class="event-date">
-          September 23 • 7:15 AM
-        </div>
-
-        <h3 class="event-title">
-          See You at the Pole
-        </h3>
-
-        <div class="event-location">
-          Jackson-Milton High School
-        </div>
-
-        <p class="event-description">
-          Join Upward Youth for See You at the Pole!
-          Students will gather together before school for a
-          student-led time of prayer for their friends,
-          classmates, teachers, school, community, and nation.
-        </p>
-
-        <span class="event-note">
-          Meet at the flagpole • 7:15 AM
-        </span>
-
-      </div>
-
-    </article>
-
-
-    <!-- =================================
-         TIME APART WOMEN'S CONFERENCE
-    ================================== -->
-
-    <article class="event-card">
-
-      <img
-        class="event-image"
-        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/9%20-%20September/Womens%20Conference%20(1).jpg"
-        alt="Time Apart Women's Conference">
-
-      <div class="event-info">
-
-        <div class="event-date">
-          September 25–26
-        </div>
-
-        <h3 class="event-title">
-          Time Apart Women's Conference
-        </h3>
-
-        <div class="event-location">
-          September 25 • 12:00 PM
-          <br>
-          through September 26 • 3:00 PM
-        </div>
-
-        <p class="event-description">
-          Join women from across Ohio for the Time Apart
-          Women's Conference. Take time away to worship,
-          grow, connect, and be encouraged.
-        </p>
-
-        <a
-          class="event-button"
-          href="https://brushfire.com/ohioministry/timeapart2026/628586/register"
-          target="_blank"
-          rel="noopener"
-          onclick="gtag('event','outbound_click',{link_url:this.href,link_text:this.innerText.trim(),link_event:'Time Apart Women\'s Conference'});">
-          REGISTER
-        </a>
-
-      </div>
-
-    </article>
-
-
-  </div>
-
-</section>
-
-
-<!-- =====================================
-     FOOTER
-====================================== -->
-
-<footer class="footer">
-  Lakeview Assembly of God • Lake Milton, Ohio
-</footer>
-
 
 </body>
 </html>
