@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,7 +9,6 @@
 <!-- =====================================
      GOOGLE ANALYTICS 4
 ====================================== -->
-
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-49YV87CD4W"></script>
 
 <script>
@@ -23,10 +21,10 @@
   gtag('js', new Date());
 
   gtag('config', 'G-49YV87CD4W', {
-    page_title: 'Lakeview Events | Lakeview Assembly'
+    page_title: 'Lakeview Events | Lakeview Assembly',
+    page_path: '/'
   });
 </script>
-
 
 <style>
 
@@ -56,13 +54,15 @@ body {
    HEADER
 ================================= */
 
-.page-header {
+.hero {
+  width: 100%;
+  padding: 58px 20px 48px;
   text-align: center;
-  padding: 55px 20px 35px;
-  background: #ffffff;
+  background: #082f5b;
+  color: #ffffff;
 }
 
-.page-header .eyebrow {
+.hero .eyebrow {
   color: #f7941d;
   font-size: 13px;
   font-weight: 800;
@@ -71,101 +71,133 @@ body {
   margin-bottom: 8px;
 }
 
-.page-header h1 {
+.hero h1 {
   margin: 0 0 12px;
-
-  color: #082f5b;
-
   font-size: clamp(36px, 6vw, 54px);
 }
 
-.page-header p {
-  max-width: 650px;
-
+.hero p {
+  max-width: 720px;
   margin: 0 auto;
-
-  color: #667788;
-
+  color: rgba(255,255,255,.86);
   font-size: 17px;
   line-height: 1.6;
 }
 
 
 /* =================================
-   MONTHS SECTION
+   CONTENT
 ================================= */
 
-.months-section {
+.content {
   width: 100%;
-  max-width: 1100px;
-
+  max-width: 900px;
   margin: 0 auto;
+  padding: 42px 20px 58px;
+}
 
-  padding: 45px 20px 60px;
+.section-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.section-heading h2 {
+  margin: 0 0 8px;
+  color: #082f5b;
+  font-size: 30px;
+}
+
+.section-heading p {
+  margin: 0;
+  color: #667788;
+  line-height: 1.6;
 }
 
 
 /* =================================
-   MONTH GRID
+   FEATURED MINISTRY LINK
 ================================= */
 
-.month-grid {
+.featured-link {
+  display: block;
+  margin-bottom: 34px;
+  padding: 22px 24px;
+  border-radius: 16px;
+  background: #082f5b;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: left;
+  box-shadow: 0 10px 28px rgba(0,0,0,.12);
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+.featured-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(0,0,0,.16);
+}
+
+.featured-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #f7941d;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.featured-title {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.featured-description {
+  display: block;
+  color: rgba(255,255,255,.82);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* =================================
+   MONTH LINKS
+================================= */
+
+.month-list {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
 }
-
-
-/* =================================
-   MONTH BUTTONS
-================================= */
 
 .month-link {
   display: flex;
-
   align-items: center;
   justify-content: center;
-
-  min-height: 115px;
-
-  padding: 25px 20px;
-
+  min-height: 76px;
+  padding: 18px 20px;
   background: #ffffff;
-
-  border:
-    1px solid rgba(8,47,91,.08);
-
-  border-radius: 16px;
-
-  box-shadow:
-    0 8px 24px rgba(0,0,0,.08);
-
-  color: #082f5b;
-
+  border: 1px solid rgba(8,47,91,.08);
+  border-radius: 12px;
   text-decoration: none;
-
-  font-size: 21px;
+  color: #082f5b;
+  font-size: 17px;
   font-weight: 800;
-
   text-align: center;
-
+  box-shadow: 0 6px 18px rgba(0,0,0,.07);
   transition:
-    transform .2s ease,
-    box-shadow .2s ease,
-    border-color .2s ease;
+    transform .15s ease,
+    box-shadow .15s ease,
+    border-color .15s ease;
 }
 
 .month-link:hover {
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 14px 32px rgba(0,0,0,.14);
-
-  border-color:
-    rgba(247,148,29,.45);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.11);
+  border-color: rgba(247,148,29,.35);
 }
 
 
@@ -175,31 +207,13 @@ body {
 
 .footer {
   width: 100%;
-
+  margin: 0;
   padding: 28px 20px;
-
-  background: #082f5b;
-
+  background: #061f3b;
   color: rgba(255,255,255,.88);
-
   text-align: center;
-
   font-size: 14px;
   font-weight: 500;
-}
-
-
-/* =================================
-   TABLET
-================================= */
-
-@media (max-width: 850px) {
-
-  .month-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
 }
 
 
@@ -207,55 +221,49 @@ body {
    MOBILE
 ================================= */
 
-@media (max-width: 550px) {
+@media (max-width: 700px) {
 
-  .page-header {
-    padding:
-      38px 18px 28px;
+  .hero {
+    padding: 42px 18px 36px;
   }
 
-  .page-header h1 {
-    font-size: 36px;
+  .hero h1 {
+    font-size: 38px;
   }
 
-  .page-header p {
-    font-size: 16px;
+  .content {
+    padding: 32px 14px 42px;
   }
 
-  .months-section {
-    padding:
-      30px 14px 42px;
-  }
-
-  .month-grid {
+  .month-list {
     grid-template-columns: 1fr;
-
     gap: 14px;
   }
 
   .month-link {
-    min-height: 78px;
+    min-height: 66px;
+  }
 
-    padding: 18px;
+  .featured-link {
+    padding: 20px;
+  }
 
-    font-size: 19px;
+  .featured-title {
+    font-size: 22px;
   }
 
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <!-- =====================================
      HEADER
 ====================================== -->
 
-<header class="page-header">
+<section class="hero">
 
   <div class="eyebrow">
     Lakeview Assembly of God
@@ -266,113 +274,65 @@ body {
   </h1>
 
   <p>
-    Stay connected with everything happening at Lakeview.
-    Select a month below to view upcoming events,
-    activities, and registration information.
+    Find upcoming events, registration information,
+    and ministry activities happening at Lakeview.
   </p>
 
-</header>
-
+</section>
 
 
 <!-- =====================================
-     ALL MONTHS
+     MAIN CONTENT
 ====================================== -->
 
-<main class="months-section">
+<main class="content">
 
-  <div class="month-grid">
+  <!-- =================================
+       UPWARD YOUTH
+  ================================== -->
 
+  <a
+    class="featured-link"
+    href="youth-events.html"
+    data-ga-event="upward_youth_events_page_click"
+    data-ga-title="Upward Youth Events"
+    data-ga-action="page_navigation"
+  >
 
-    <!-- JANUARY -->
+    <span class="featured-label">
+      Student Ministry
+    </span>
 
-    <a
-      class="month-link"
-      href="january.html"
-      data-ga-month="January"
-    >
-      January Events
-    </a>
+    <span class="featured-title">
+      Upward Youth Events
+    </span>
 
+    <span class="featured-description">
+      View upcoming Upward Youth activities, special events,
+      trips, and registration information.
+    </span>
 
-    <!-- FEBRUARY -->
-
-    <a
-      class="month-link"
-      href="february.html"
-      data-ga-month="February"
-    >
-      February Events
-    </a>
-
-
-    <!-- MARCH -->
-
-    <a
-      class="month-link"
-      href="march.html"
-      data-ga-month="March"
-    >
-      March Events
-    </a>
+  </a>
 
 
-    <!-- APRIL -->
+  <!-- =================================
+       MONTHLY EVENTS
+  ================================== -->
 
-    <a
-      class="month-link"
-      href="april.html"
-      data-ga-month="April"
-    >
-      April Events
-    </a>
+  <div class="section-heading">
 
+    <h2>
+      Monthly Events
+    </h2>
 
-    <!-- MAY -->
+    <p>
+      Choose a month to see what's happening at Lakeview.
+    </p>
 
-    <a
-      class="month-link"
-      href="may.html"
-      data-ga-month="May"
-    >
-      May Events
-    </a>
+  </div>
 
 
-    <!-- JUNE -->
-
-    <a
-      class="month-link"
-      href="june.html"
-      data-ga-month="June"
-    >
-      June Events
-    </a>
-
-
-    <!-- JULY -->
-
-    <a
-      class="month-link"
-      href="july.html"
-      data-ga-month="July"
-    >
-      July Events
-    </a>
-
-
-    <!-- AUGUST -->
-
-    <a
-      class="month-link"
-      href="august.html"
-      data-ga-month="August"
-    >
-      August Events
-    </a>
-
-
-    <!-- SEPTEMBER -->
+  <div class="month-list">
 
     <a
       class="month-link"
@@ -382,9 +342,6 @@ body {
       September Events
     </a>
 
-
-    <!-- OCTOBER -->
-
     <a
       class="month-link"
       href="october.html"
@@ -392,9 +349,6 @@ body {
     >
       October Events
     </a>
-
-
-    <!-- NOVEMBER -->
 
     <a
       class="month-link"
@@ -404,22 +358,9 @@ body {
       November Events
     </a>
 
-
-    <!-- DECEMBER -->
-
-    <a
-      class="month-link"
-      href="december.html"
-      data-ga-month="December"
-    >
-      December Events
-    </a>
-
-
   </div>
 
 </main>
-
 
 
 <!-- =====================================
@@ -433,116 +374,70 @@ body {
 </footer>
 
 
-
 <!-- =====================================
-     MONTH CLICK TRACKING
+     MONTH PAGE CLICK TRACKING
 ====================================== -->
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
 
-document.addEventListener(
-  'DOMContentLoaded',
-  function() {
+  const monthLinks = document.querySelectorAll('[data-ga-month]');
 
-    const monthLinks =
-      document.querySelectorAll(
-        '[data-ga-month]'
+  monthLinks.forEach(function(link) {
+
+    link.addEventListener('click', function() {
+
+      const monthName = this.dataset.gaMonth;
+
+      const eventName =
+        monthName.toLowerCase() + '_month_page_click';
+
+      gtag('event', eventName, {
+        month_name: monthName,
+        link_text: this.innerText.trim(),
+        link_url: this.href
+      });
+
+      console.log(
+        'GA4 Month Page Click Sent:',
+        eventName
       );
 
+    });
 
-    monthLinks.forEach(
-      function(link) {
-
-        link.addEventListener(
-          'click',
-          function(event) {
-
-            event.preventDefault();
+  });
 
 
-            const monthName =
-              this.dataset.gaMonth;
+  const trackedLinks =
+    document.querySelectorAll('[data-ga-event]');
 
+  trackedLinks.forEach(function(link) {
 
-            const destination =
-              this.href;
+    link.addEventListener('click', function() {
 
+      const eventName = this.dataset.gaEvent;
+      const eventTitle = this.dataset.gaTitle;
+      const actionType = this.dataset.gaAction;
 
-            /*
-              Automatically creates:
+      gtag('event', eventName, {
+        event_title: eventTitle,
+        action_type: actionType,
+        link_text: this.innerText.trim(),
+        link_url: this.href
+      });
 
-              january_month_page_click
-              february_month_page_click
-              march_month_page_click
-              april_month_page_click
-              may_month_page_click
-              june_month_page_click
-              july_month_page_click
-              august_month_page_click
-              september_month_page_click
-              october_month_page_click
-              november_month_page_click
-              december_month_page_click
-            */
+      console.log(
+        'GA4 Event Sent:',
+        eventName,
+        eventTitle
+      );
 
+    });
 
-            const gaEventName =
-              monthName
-                .toLowerCase()
-                .replace(/\s+/g, '_')
-              + '_month_page_click';
+  });
 
-
-            gtag(
-              'event',
-              gaEventName,
-              {
-
-                month_name:
-                  monthName,
-
-                link_text:
-                  this.innerText.trim(),
-
-                link_url:
-                  destination
-
-              }
-            );
-
-
-            console.log(
-              'GA4 Month Event Sent:',
-              gaEventName
-            );
-
-
-            /*
-              Give GA4 a moment to send
-              before opening the page.
-            */
-
-            setTimeout(
-              function() {
-
-                window.location.href =
-                  destination;
-
-              },
-              300
-            );
-
-          }
-        );
-
-      }
-    );
-
-  }
-);
-
+});
 </script>
-
 
 </body>
 </html>
