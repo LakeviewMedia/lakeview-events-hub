@@ -22,8 +22,7 @@
   gtag('js', new Date());
 
   gtag('config', 'G-49YV87CD4W', {
-    page_title: 'Lakeview Events | Lakeview Assembly',
-    page_path: '/'
+    page_title: 'Lakeview Events | Lakeview Assembly'
   });
 </script>
 
@@ -34,8 +33,14 @@
     box-sizing: border-box;
   }
 
+  html,
   body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f6f8fb;
     color: #18324a;
@@ -46,13 +51,13 @@
   h1 {
     color: #082f5b;
     font-size: clamp(30px, 5vw, 44px);
-    margin-bottom: 10px;
+    margin: 0 0 10px;
   }
 
   p {
     color: #667788;
     font-size: 17px;
-    margin-bottom: 34px;
+    margin: 0 0 34px;
   }
 
   .month-list {
@@ -65,14 +70,20 @@
 
   .month-link {
     display: block;
+
     background: #ffffff;
-    border: 1px solid rgba(8,47,91,.08);
+
+    border:
+      1px solid rgba(8,47,91,.08);
+
     border-radius: 10px;
+
     padding: 16px 20px;
 
     text-decoration: none;
 
     color: #082f5b;
+
     font-weight: 800;
     font-size: 17px;
 
@@ -108,6 +119,8 @@
 
   <div class="month-list">
 
+    <!-- SEPTEMBER -->
+
     <a
       class="month-link"
       href="september.html"
@@ -142,6 +155,19 @@
 
     -->
 
+
+    <!-- DECEMBER
+
+    <a
+      class="month-link"
+      href="december.html"
+      data-ga-month="December"
+    >
+      December Events
+    </a>
+
+    -->
+
   </div>
 
 
@@ -153,24 +179,69 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  const monthLinks = document.querySelectorAll('[data-ga-month]');
+  const monthLinks =
+    document.querySelectorAll('[data-ga-month]');
 
   monthLinks.forEach(function(link) {
 
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function(event) {
 
-      const monthName = this.dataset.gaMonth;
+      event.preventDefault();
 
-      gtag('event', 'month_page_click', {
-        month_name: monthName,
-        link_text: this.innerText.trim(),
-        link_url: this.href
+      const monthName =
+        this.dataset.gaMonth;
+
+      const destination =
+        this.href;
+
+      /*
+        Example:
+
+        September
+        becomes
+
+        september_month_page_click
+      */
+
+      const gaEventName =
+        monthName
+          .toLowerCase()
+          .replace(/\s+/g, '_')
+        + '_month_page_click';
+
+
+      gtag('event', gaEventName, {
+
+        month_name:
+          monthName,
+
+        link_text:
+          this.innerText.trim(),
+
+        link_url:
+          destination
+
       });
 
+
       console.log(
-        'GA4 Month Click Sent:',
-        monthName
+        'GA4 Month Event Sent:',
+        gaEventName
       );
+
+
+      /*
+        Small delay gives GA4 time
+        to send the event before
+        opening the month page.
+      */
+
+      setTimeout(function() {
+
+        window.location.href =
+          destination;
+
+      }, 300);
 
     });
 
