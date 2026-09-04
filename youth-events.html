@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Upward Youth Events | Lakeview Assembly</title>
+
+<!-- =====================================
+     GOOGLE ANALYTICS 4
+====================================== -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-49YV87CD4W"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+
+  gtag('config', 'G-49YV87CD4W', {
+    page_title: 'Upward Youth Events | Lakeview Assembly',
+    page_path: '/youth-events.html'
+  });
+</script>
+
+<style>
+
+/* =================================
+   GLOBAL
+================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f8fb;
+  color: #18324a;
+}
+
+
+/* =================================
+   UPWARD YOUTH HERO
+================================= */
+
+.youth-hero {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #082f5b;
+}
+
+.youth-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* =================================
+   INTRODUCTION
+================================= */
+
+.intro {
+  width: 100%;
+  text-align: center;
+  padding: 42px 20px 32px;
+  background: #ffffff;
+}
+
+.eyebrow {
+  color: #f7941d;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  margin-bottom: 8px;
+}
+
+.intro h1 {
+  margin: 0 0 12px;
+  color: #082f5b;
+  font-size: clamp(34px, 5vw, 50px);
+}
+
+.intro p {
+  max-width: 720px;
+  margin: auto;
+  color: #667788;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* =================================
+   EVENTS SECTION
+================================= */
+
+.events-section {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 40px 20px 55px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  margin: 0 0 8px;
+  color: #082f5b;
+  font-size: 30px;
+}
+
+.section-title p {
+  margin: 0;
+  color: #667788;
+}
+
+
+/* =================================
+   EVENT GRID
+================================= */
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+}
+
+
+/* =================================
+   EVENT CARDS
+================================= */
+
+.event-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+
+  border: 1px solid rgba(8,47,91,.08);
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.10);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100%;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 16px 36px rgba(0,0,0,.15);
+
+  border-color: rgba(247,148,29,.35);
+}
+
+
+/* =================================
+   EVENT IMAGES
+================================= */
+
+.event-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  background: #ffffff;
+}
+
+
+/* =================================
+   EVENT INFORMATION
+================================= */
+
+.event-info {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.event-date {
+  color: #f7941d;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 7px;
+}
+
+.event-title {
+  color: #082f5b;
+  font-size: 25px;
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+.event-location {
+  color: #082f5b;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.event-description {
+  color: #667788;
+  line-height: 1.6;
+  font-size: 15px;
+  margin: 0 0 20px;
+  flex-grow: 1;
+}
+
+.event-description strong {
+  color: #082f5b;
+}
+
+
+/* =================================
+   EVENT NOTE
+================================= */
+
+.event-note {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 11px 0;
+  color: #082f5b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* =================================
+   REGISTER BUTTON
+================================= */
+
+.event-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: auto;
+
+  background: #f7941d;
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  padding: 13px 21px;
+  border-radius: 8px;
+
+  transition:
+    background .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.event-button:hover {
+  background: #df7e0c;
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 16px rgba(247,148,29,.25);
+}
+
+
+/* =================================
+   BACK TO EVENTS
+================================= */
+
+.back-link-wrap {
+  text-align: center;
+  margin-top: 34px;
+}
+
+.back-link {
+  color: #082f5b;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+
+/* =================================
+   ABOUT UPWARD YOUTH
+================================= */
+
+.youth-info {
+  width: 100%;
+  background: #082f5b;
+  padding: 42px 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.youth-info-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.youth-info h2 {
+  margin: 0 0 12px;
+  font-size: 30px;
+}
+
+.youth-info p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.88);
+}
+
+.youth-info strong {
+  color: #f7941d;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+  width: 100%;
+  margin: 0;
+  padding: 28px 20px;
+  background: #061f3b;
+  color: rgba(255,255,255,.88);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .intro {
+    padding: 32px 18px 26px;
+  }
+
+  .intro h1 {
+    font-size: 34px;
+  }
+
+  .intro p {
+    font-size: 16px;
+  }
+
+  .events-section {
+    padding: 30px 14px 40px;
+  }
+
+  .section-title h2 {
+    font-size: 27px;
+  }
+
+  .event-info {
+    padding: 19px;
+  }
+
+  .event-title {
+    font-size: 22px;
+  }
+
+  .youth-info {
+    padding: 34px 18px;
+  }
+
+  .youth-info h2 {
+    font-size: 26px;
+  }
+
+  .footer {
+    padding: 24px 15px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     UPWARD YOUTH HERO
+====================================== -->
+
+<section class="youth-hero">
+
+  <img
+    src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/Upward%20Youth%20Events/Youth%20Events.jpg"
+    alt="Upward Youth Events">
+
+</section>
+
+
+
+<!-- =====================================
+     INTRODUCTION
+====================================== -->
+
+<section class="intro">
+
+  <div class="eyebrow">
+    Lakeview Assembly of God
+  </div>
+
+  <h1>
+    Upward Youth Events
+  </h1>
+
+  <p>
+    Upward Youth is a place for students to connect, grow,
+    have fun, and build meaningful relationships as they
+    grow in their faith. Check out our upcoming events below.
+  </p>
+
+</section>
+
+
+
+<!-- =====================================
+     UPCOMING EVENTS
+====================================== -->
+
+<section class="events-section">
+
+  <div class="section-title">
+
+    <h2>
+      Upcoming Events
+    </h2>
+
+    <p>
+      See what's happening next at Upward Youth.
+    </p>
+
+  </div>
+
+
+  <div class="event-grid">
+
+
+    <!-- =================================
+         CANFIELD FAIR DAY
+    ================================== -->
+
+    <article class="event-card">
+
+      <img
+        class="event-image"
+        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/Upward%20Youth%20Events/No%20Youth%20Fair%20Day.jpg"
+        alt="Upward Youth Canfield Fair Day">
+
+      <div class="event-info">
+
+        <div class="event-date">
+          September 6, 2026 • 5:00 PM – 8:00 PM
+        </div>
+
+        <h3 class="event-title">
+          Canfield Fair Day
+        </h3>
+
+        <p class="event-location">
+          Canfield Fairgrounds
+        </p>
+
+        <p class="event-description">
+          There will be no regular Upward Youth service.
+          Instead, we're heading to the Canfield Fair!
+          Entrance to the fair will be paid for.
+          Students are responsible for their own food,
+          games, and rides.
+        </p>
+
+        <span class="event-note">
+          See Pastor Mikayla for more details!
+        </span>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================
+         BACK TO SCHOOL BASH
+    ================================== -->
+
+    <article class="event-card">
+
+      <img
+        class="event-image"
+        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/Upward%20Youth%20Events/Back%20to%20School%20Bash.png"
+        alt="Upward Youth Back to School Bash">
+
+      <div class="event-info">
+
+        <div class="event-date">
+          September 13, 2026 • 6:00 PM – 8:00 PM
+        </div>
+
+        <h3 class="event-title">
+          Back to School Bash
+        </h3>
+
+        <p class="event-location">
+          Lakeview Assembly of God
+        </p>
+
+        <p class="event-description">
+          School is back, and we're kicking off the new
+          season together! Join Upward Youth for our
+          Back to School Bash featuring games, food,
+          friends, and plenty of fun. Bring a friend
+          and start the school year with us!
+        </p>
+
+        <span class="event-note">
+          Bring a friend and join us!
+        </span>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================
+         SEE YOU AT THE POLE
+    ================================== -->
+
+    <article class="event-card">
+
+      <img
+        class="event-image"
+        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/Upward%20Youth%20Events/See%20You%20At%20The%20Pole%20(1).jpg"
+        alt="See You at the Pole">
+
+      <div class="event-info">
+
+        <div class="event-date">
+          September 23, 2026 • 7:15 AM
+        </div>
+
+        <h3 class="event-title">
+          See You at the Pole
+        </h3>
+
+        <p class="event-location">
+          Jackson-Milton High School
+        </p>
+
+        <p class="event-description">
+          Join Upward Youth for See You at the Pole!
+          Students will gather together before school for a
+          student-led time of prayer for their friends,
+          classmates, teachers, school, community, and nation.
+        </p>
+
+        <span class="event-note">
+          Meet at the flagpole • 7:15 AM
+        </span>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================
+         2026 YOUTH CONFERENCE
+    ================================== -->
+
+    <article class="event-card">
+
+      <img
+        class="event-image"
+        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/Upward%20Youth%20Events/2026%20Youth%20Conference.jpg"
+        alt="2026 Youth Conference">
+
+      <div class="event-info">
+
+        <div class="event-date">
+          November 19–21, 2026
+        </div>
+
+        <h3 class="event-title">
+          2026 Youth Conference
+        </h3>
+
+        <p class="event-description">
+          Youth Conference is more than an event—it’s a launchpad
+          for your faith. Experience powerful worship, impactful
+          teaching, practical tools to make a difference in your
+          world, and a ton of fun!
+        </p>
+
+        <a
+          class="event-button"
+          href="https://ourlakeviewchurch.churchcenter.com/registrations/events/3795716"
+          target="_blank"
+          rel="noopener"
+          data-ga-event="youth_conference_registration_click"
+          data-ga-title="2026 Youth Conference"
+          data-ga-action="registration"
+        >
+          REGISTER
+        </a>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+
+  <div class="back-link-wrap">
+
+    <a
+      class="back-link"
+      href="index.html"
+      data-ga-event="youth_back_to_events_click"
+      data-ga-title="Back to Lakeview Events"
+      data-ga-action="page_navigation"
+    >
+      ← Back to Lakeview Events
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     ABOUT UPWARD YOUTH
+====================================== -->
+
+<section class="youth-info">
+
+  <div class="youth-info-inner">
+
+    <h2>
+      Come Hang Out With Us
+    </h2>
+
+    <p>
+      Upward Youth is the student ministry of
+      <strong>Lakeview Assembly of God</strong>.
+      Our goal is to give students a place to belong,
+      grow in their relationship with Jesus, build friendships,
+      and discover how God can use them right now.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     FOOTER
+====================================== -->
+
+<footer class="footer">
+
+  Upward Youth • Lakeview Assembly of God • Lake Milton, Ohio
+
+</footer>
+
+
+
+<!-- =====================================
+     CLICK TRACKING
+====================================== -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  const trackedLinks =
+    document.querySelectorAll('[data-ga-event]');
+
+  trackedLinks.forEach(function(link) {
+
+    link.addEventListener('click', function() {
+
+      const eventName = this.dataset.gaEvent;
+      const eventTitle = this.dataset.gaTitle;
+      const actionType = this.dataset.gaAction;
+
+      gtag('event', eventName, {
+        event_title: eventTitle,
+        action_type: actionType,
+        event_ministry: 'Upward Youth',
+        link_url: this.href,
+        link_text: this.innerText.trim()
+      });
+
+      console.log(
+        'GA4 Event Sent:',
+        eventName,
+        eventTitle
+      );
+
+    });
+
+  });
+
+});
+</script>
+
+
+</body>
+</html>
