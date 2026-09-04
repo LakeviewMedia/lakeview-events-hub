@@ -73,9 +73,7 @@
 
     background: #ffffff;
 
-    border:
-      1px solid rgba(8,47,91,.08);
-
+    border: 1px solid rgba(8,47,91,.08);
     border-radius: 10px;
 
     padding: 16px 20px;
@@ -119,6 +117,7 @@
 
   <div class="month-list">
 
+
     <!-- SEPTEMBER -->
 
     <a
@@ -130,7 +129,7 @@
     </a>
 
 
-    <!-- OCTOBER
+    <!-- OCTOBER -->
 
     <a
       class="month-link"
@@ -139,8 +138,6 @@
     >
       October Events
     </a>
-
-    -->
 
 
     <!-- NOVEMBER
@@ -194,13 +191,13 @@ document.addEventListener('DOMContentLoaded', function() {
       const destination =
         this.href;
 
-      /*
-        Example:
 
-        September
-        becomes
+      /*
+        Creates events like:
 
         september_month_page_click
+        october_month_page_click
+        november_month_page_click
       */
 
       const gaEventName =
@@ -232,8 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       /*
         Small delay gives GA4 time
-        to send the event before
-        opening the month page.
+        to send before navigating.
       */
 
       setTimeout(function() {
