@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Connect Card | Lakeview Assembly</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-49YV87CD4W"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-49YV87CD4W', {
+      page_title: 'Connect Card Redirect | Lakeview Assembly'
+    });
+
+    const destination =
+      'https://ourlakeviewchurch.churchcenter.com/people/forms/946726';
+
+    let redirected = false;
+
+    function goToConnectCard() {
+      if (redirected) return;
+      redirected = true;
+      window.location.replace(destination);
+    }
+
+    // Send the custom GA4 event
+    gtag('event', 'connect_card_click', {
+      event_category: 'church_center_action',
+      event_title: 'Connect Card',
+      action_type: 'connect_card',
+      source_location: 'church_center',
+      transport_type: 'beacon',
+      event_callback: goToConnectCard
+    });
+
+    // Fallback so the visitor is never stuck here
+    setTimeout(goToConnectCard, 1200);
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #082f5b;
+      color: white;
+      text-align: center;
+    }
+
+    .message {
+      padding: 30px;
+    }
+
+    .message h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    .message p {
+      margin: 0;
+      opacity: .85;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="message">
+    <h1>Lakeview Connect Card</h1>
+    <p>Opening the Connect Card...</p>
+  </div>
+
+</body>
+</html>
