@@ -6,6 +6,7 @@
 
   <title>Lakeview Assembly</title>
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-49YV87CD4W"></script>
 
   <script>
@@ -16,7 +17,10 @@
     }
 
     gtag('js', new Date());
-    gtag('config', 'G-49YV87CD4W');
+
+    gtag('config', 'G-49YV87CD4W', {
+      page_title: 'Church Center Tracking Redirect | Lakeview Assembly'
+    });
   </script>
 
   <style>
@@ -35,6 +39,16 @@
     .message {
       padding: 30px;
     }
+
+    .message h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    .message p {
+      margin: 0;
+      opacity: .85;
+    }
   </style>
 </head>
 
@@ -46,7 +60,6 @@
   </div>
 
   <script>
-
     const trackedLinks = {
 
       notes: {
@@ -72,33 +85,50 @@
 
     };
 
+
     const params = new URLSearchParams(window.location.search);
     const linkID = params.get('id');
 
     const link = trackedLinks[linkID];
 
+
     if (!link) {
 
-      document.getElementById('title').textContent = 'Link Not Found';
+      document.getElementById('title').textContent =
+        'Link Not Found';
+
       document.getElementById('status').textContent =
         'This Lakeview link is not currently available.';
 
     } else {
 
-      document.title = link.title + ' | Lakeview Assembly';
+      document.title =
+        link.title + ' | Lakeview Assembly';
 
-      document.getElementById('title').textContent = link.title;
-      document.getElementById('status').textContent = 'Opening...';
+      document.getElementById('title').textContent =
+        link.title;
+
+      document.getElementById('status').textContent =
+        'Opening...';
+
 
       let redirected = false;
 
+
       function redirectNow() {
+
         if (redirected) return;
 
         redirected = true;
 
         window.location.href = link.destination;
+
       }
+
+
+      /*
+        Send custom Church Center event to GA4
+      */
 
       gtag('event', link.event, {
 
@@ -114,14 +144,22 @@
 
         tracking_id: linkID,
 
-        transport_type: 'beacon'
+        transport_type: 'beacon',
+
+        event_callback: redirectNow
 
       });
 
-      setTimeout(redirectNow, 2000);
+
+      /*
+        Fallback:
+        if GA4 callback does not fire,
+        still send visitor to destination
+      */
+
+      setTimeout(redirectNow, 2500);
 
     }
-
   </script>
 
 </body>
