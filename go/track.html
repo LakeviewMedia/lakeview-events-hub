@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Lakeview Assembly</title>
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-49YV87CD4W"></script>
 
   <script>
@@ -18,13 +16,8 @@
     }
 
     gtag('js', new Date());
-
-    gtag('config', 'G-49YV87CD4W', {
-      page_title: 'Church Center Tracking Redirect | Lakeview Assembly'
-    });
+    gtag('config', 'G-49YV87CD4W');
   </script>
-
-  <script src="config.js?v=2"></script>
 
   <style>
     body {
@@ -42,18 +35,7 @@
     .message {
       padding: 30px;
     }
-
-    .message h1 {
-      margin: 0 0 10px;
-      font-size: 28px;
-    }
-
-    .message p {
-      margin: 0;
-      opacity: .85;
-    }
   </style>
-
 </head>
 
 <body>
@@ -65,40 +47,57 @@
 
   <script>
 
+    const trackedLinks = {
+
+      notes: {
+        destination: "http://bible.com/events/49656593",
+        event: "cc_youversion_notes_click",
+        title: "YouVersion Notes",
+        action: "sermon_notes"
+      },
+
+      connect: {
+        destination: "https://ourlakeviewchurch.churchcenter.com/people/forms/946726",
+        event: "cc_connect_card_click",
+        title: "Connect Card",
+        action: "connect_card"
+      },
+
+      timeapart: {
+        destination: "https://brushfire.com/ohioministry/timeapart2026/628586/register",
+        event: "cc_time_apart_registration_click",
+        title: "Time Apart Registration",
+        action: "registration"
+      }
+
+    };
+
     const params = new URLSearchParams(window.location.search);
     const linkID = params.get('id');
 
-    const link = window.TRACKED_LINKS   ? window.TRACKED_LINKS[linkID]   : null;
+    const link = trackedLinks[linkID];
 
     if (!link) {
 
-      document.getElementById('title').textContent =
-        'Link Not Found';
-
+      document.getElementById('title').textContent = 'Link Not Found';
       document.getElementById('status').textContent =
         'This Lakeview link is not currently available.';
 
     } else {
 
-      document.title =
-        link.title + ' | Lakeview Assembly';
+      document.title = link.title + ' | Lakeview Assembly';
 
-      document.getElementById('title').textContent =
-        link.title;
-
-      document.getElementById('status').textContent =
-        'Opening...';
+      document.getElementById('title').textContent = link.title;
+      document.getElementById('status').textContent = 'Opening...';
 
       let redirected = false;
 
-      function redirect() {
-
+      function redirectNow() {
         if (redirected) return;
 
         redirected = true;
 
-        window.location.replace(link.destination);
-
+        window.location.href = link.destination;
       }
 
       gtag('event', link.event, {
@@ -115,14 +114,11 @@
 
         tracking_id: linkID,
 
-        transport_type: 'beacon',
-
-        event_callback: redirect
+        transport_type: 'beacon'
 
       });
 
-      // Never leave visitor stuck on tracking page
-      setTimeout(redirect, 1200);
+      setTimeout(redirectNow, 800);
 
     }
 
