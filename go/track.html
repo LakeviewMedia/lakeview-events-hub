@@ -24,7 +24,7 @@
     });
   </script>
 
-  <script src="config.js"></script>
+  <script src="config.js?v=2"></script>
 
   <style>
     body {
@@ -68,7 +68,7 @@
     const params = new URLSearchParams(window.location.search);
     const linkID = params.get('id');
 
-    const link = trackedLinks[linkID];
+    const link = window.TRACKED_LINKS   ? window.TRACKED_LINKS[linkID]   : null;
 
     if (!link) {
 
