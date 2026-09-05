@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lakeview Assembly</title>
+
+  <!-- Load our tracked destinations -->
+  <script src="links.js"></script>
+
+  <!-- Google Analytics -->
+  <script src="https://www.googletagmanager.com/gtag/js?id=G-49YV87CD4W"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-49YV87CD4W', {
+      page_title: 'Church Center Tracking Redirect | Lakeview Assembly'
+    });
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #082f5b;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+
+    .message {
+      padding: 30px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    p {
+      margin: 0;
+      opacity: .85;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="message">
+    <h1 id="title">Lakeview Assembly</h1>
+    <p id="status">Opening...</p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    const item =
+      typeof links !== 'undefined'
+        ? links[id]
+        : null;
+
+    if (!item) {
+
+      document.getElementById('title').textContent =
+        'Link Not Found';
+
+      document.getElementById('status').textContent =
+        'This Lakeview link is not currently available.';
+
+    } else {
+
+      document.title =
+        item.name + ' | Lakeview Assembly';
+
+      document.getElementById('title').textContent =
+        item.name;
+
+      document.getElementById('status').textContent =
+        'Opening...';
+
+      let redirected = false;
+
+      function redirectNow() {
+
+        if (redirected) return;
+
+        redirected = true;
+
+        window.location.replace(item.url);
+
+      }
+
+      /*
+       * Send the Church Center action to GA4.
+       * Redirect when Google finishes processing the event.
+       */
+
+      gtag('event', item.event, {
+
+        event_category: 'church_center_action',
+
+        event_title: item.name,
+
+        tracking_id: id,
+
+        destination_url: item.url,
+
+        source_location: 'church_center',
+
+        transport_type: 'beacon',
+
+        event_callback: redirectNow
+
+      });
+
+      /*
+       * Safety fallback.
+       * Visitor will still reach destination if Analytics is blocked.
+       */
+
+      setTimeout(redirectNow, 2500);
+
+    }
+  </script>
+
+</body>
+</html>
