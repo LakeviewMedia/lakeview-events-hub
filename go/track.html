@@ -6,7 +6,7 @@
 
   <title>Lakeview Assembly</title>
 
-  <!-- Link destinations -->
+  <!-- Destination list -->
   <script src="links.js"></script>
 
   <!-- Google Analytics -->
@@ -34,7 +34,7 @@
       align-items: center;
       justify-content: center;
       background: #082f5b;
-      color: white;
+      color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
       text-align: center;
     }
@@ -44,7 +44,14 @@
     }
 
     h1 {
-      margin-bottom: 10px;
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 18px;
+      opacity: 0.85;
     }
   </style>
 </head>
@@ -61,7 +68,7 @@
     const id = params.get('id');
 
     const item =
-      typeof links !== 'undefined'
+      typeof links !== 'undefined' && id
         ? links[id]
         : null;
 
@@ -86,32 +93,35 @@
 
       window.addEventListener('load', function () {
 
-        console.log('Sending GA4 event:', item.event);
+        console.log(
+          'Sending GA4 event:',
+          item.event
+        );
+
+        /*
+         * Simple GA4 event.
+         * This matches the manual test that worked.
+         */
 
         gtag('event', item.event, {
-
-          event_category: 'church_center_action',
-
-          event_title: item.name,
-
-          tracking_id: id,
-
-          source_location: 'church_center',
-
-          destination_url: item.url
-
+          debug_mode: true
         });
 
         /*
-         * Give GA4 time to transmit,
-         * then send visitor to destination.
+         * Give GA4 time to send the event,
+         * then redirect to the destination.
          */
 
         setTimeout(function () {
 
+          console.log(
+            'Redirecting to:',
+            item.url
+          );
+
           window.location.replace(item.url);
 
-        }, 2000);
+        }, 3000);
 
       });
 
