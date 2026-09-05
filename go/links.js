@@ -25,14 +25,15 @@ const links = {
   },
 
   isaidyes: {
-  name: "I Said YES",
-  url: "https://ourlakeviewchurch.churchcenter.com/people/forms/950846",
-  event: "cc_i_said_yes_click"
-}
+    name: "I Said YES",
+    url: "https://ourlakeviewchurch.churchcenter.com/people/forms/950846",
+    event: "cc_i_said_yes_click"
+  },
 
   jointeam: {
-  name: "Join A Team",
-  url: "https://ourlakeviewchurch.churchcenter.com/people/forms/952793",
-  event: "cc_join_a_team_click"
-}
+    name: "Join A Team",
+    url: "https://ourlakeviewchurch.churchcenter.com/people/forms/952793",
+    event: "cc_join_a_team_click"
+  }
+
 };
