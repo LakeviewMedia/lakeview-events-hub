@@ -7,7 +7,8 @@
   <title>Lakeview Assembly</title>
 
   <!-- Destination list -->
-  <script src="links.js"></script>
+  <!-- Version added to prevent an old cached links.js from loading -->
+  <script src="links.js?v=20260905"></script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-49YV87CD4W"></script>
@@ -99,8 +100,8 @@
         );
 
         /*
-         * Simple GA4 event.
-         * This matches the manual test that worked.
+         * Send tracked Church Center action to GA4.
+         * This is the tracking method we confirmed works.
          */
 
         gtag('event', item.event, {
@@ -108,7 +109,7 @@
         });
 
         /*
-         * Give GA4 time to send the event,
+         * Give GA4 time to transmit the event,
          * then redirect to the destination.
          */
 
