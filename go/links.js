@@ -24,13 +24,13 @@ const links = {
     event: "cc_river_church_registration_click"
   },
 
-  isaidyes: {
+  "950846": {
     name: "I Said YES",
     url: "https://ourlakeviewchurch.churchcenter.com/people/forms/950846",
     event: "cc_i_said_yes_click"
   },
 
-  jointeam: {
+  "952793": {
     name: "Join A Team",
     url: "https://ourlakeviewchurch.churchcenter.com/people/forms/952793",
     event: "cc_join_a_team_click"
