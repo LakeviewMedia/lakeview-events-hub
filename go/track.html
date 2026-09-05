@@ -6,11 +6,7 @@
 
   <title>Lakeview Assembly</title>
 
-  <!-- Load our tracked destinations -->
   <script src="links.js"></script>
-
-  <!-- Google Analytics -->
-  <script src="https://www.googletagmanager.com/gtag/js?id=G-49YV87CD4W"></script>
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -22,9 +18,11 @@
     gtag('js', new Date());
 
     gtag('config', 'G-49YV87CD4W', {
-      page_title: 'Church Center Tracking Redirect | Lakeview Assembly'
+      send_page_view: false
     });
   </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-49YV87CD4W"></script>
 
   <style>
     body {
@@ -73,19 +71,16 @@
 
     if (!item) {
 
-      document.getElementById('title').textContent =
-        'Link Not Found';
+      document.getElementById('title').textContent = 'Link Not Found';
 
       document.getElementById('status').textContent =
         'This Lakeview link is not currently available.';
 
     } else {
 
-      document.title =
-        item.name + ' | Lakeview Assembly';
+      document.title = item.name + ' | Lakeview Assembly';
 
-      document.getElementById('title').textContent =
-        item.name;
+      document.getElementById('title').textContent = item.name;
 
       document.getElementById('status').textContent =
         'Opening...';
@@ -99,15 +94,11 @@
         redirected = true;
 
         window.location.replace(item.url);
-
       }
 
-      /*
-       * Send the Church Center action to GA4.
-       * Redirect when Google finishes processing the event.
-       */
-
       gtag('event', item.event, {
+
+        send_to: 'G-49YV87CD4W',
 
         event_category: 'church_center_action',
 
@@ -121,16 +112,13 @@
 
         transport_type: 'beacon',
 
-        event_callback: redirectNow
+        event_callback: redirectNow,
+
+        event_timeout: 4000
 
       });
 
-      /*
-       * Safety fallback.
-       * Visitor will still reach destination if Analytics is blocked.
-       */
-
-      setTimeout(redirectNow, 2500);
+      setTimeout(redirectNow, 4500);
 
     }
   </script>
