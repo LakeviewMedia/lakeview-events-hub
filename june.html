@@ -722,23 +722,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
       gtag('event', eventName, {
 
-        event_title:
-          eventTitle,
+  event_title: eventTitle,
+  action_type: actionType,
+  event_month: 'June',
+  link_url: linkUrl,
+  link_text: this.innerText.trim(),
 
-        action_type:
-          actionType,
+  transport_type: 'beacon'
 
-        event_month:
-          'June',
-
-        link_url:
-          linkUrl,
-
-        link_text:
-          this.innerText.trim()
-
-      });
-
+});
 
       console.log(
         'GA4 Event Sent:',
