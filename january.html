@@ -193,7 +193,6 @@ body {
 
 .event-image {
   width: 100%;
-
   aspect-ratio: 16 / 9;
 
   display: block;
@@ -544,6 +543,14 @@ body {
           Event Name
         </h3>
 
+        <!-- OPTIONAL LOCATION
+
+        <div class="event-location">
+          Event Location
+        </div>
+
+        -->
+
         <p class="event-description">
           Add the event description here.
         </p>
@@ -639,3 +646,107 @@ body {
         </div>
 
         <h3 class="event-title">
+          Event Name
+        </h3>
+
+        <p class="event-description">
+          Add the event description here.
+        </p>
+
+        <!-- OPTIONAL BUTTON
+
+        <a
+          class="event-button"
+          href="REGISTRATION LINK"
+          target="_blank"
+          rel="noopener"
+          data-ga-event="event_registration_click"
+          data-ga-title="Event Name"
+          data-ga-action="registration"
+        >
+          REGISTER
+        </a>
+
+        -->
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================
+     FOOTER
+====================================== -->
+
+<footer class="footer">
+
+  Lakeview Assembly of God • Lake Milton, Ohio
+
+</footer>
+
+
+
+<!-- =====================================
+     GA4 EXTERNAL LINK TRACKING
+====================================== -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const trackedLinks =
+    document.querySelectorAll('[data-ga-event]');
+
+  trackedLinks.forEach(function(link) {
+
+    link.addEventListener('click', function() {
+
+      const eventName =
+        this.dataset.gaEvent;
+
+      const eventTitle =
+        this.dataset.gaTitle;
+
+      const actionType =
+        this.dataset.gaAction;
+
+      const linkUrl =
+        this.href;
+
+
+      gtag('event', eventName, {
+
+        event_title: eventTitle,
+        action_type: actionType,
+        event_month: 'January',
+        link_url: linkUrl,
+        link_text: this.innerText.trim(),
+
+        transport_type: 'beacon'
+
+      });
+
+
+      console.log(
+        'GA4 Event Sent:',
+        eventName,
+        eventTitle
+      );
+
+    });
+
+  });
+
+});
+
+</script>
+
+
+</body>
+</html>
