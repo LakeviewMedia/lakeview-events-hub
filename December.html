@@ -206,6 +206,7 @@ body {
   width: 100%;
   height: auto;
   aspect-ratio: auto;
+  object-fit: contain;
 }
 
 
@@ -271,6 +272,7 @@ body {
 
 .event-button {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -297,6 +299,7 @@ body {
 
 .event-button:hover {
   background: #df7e0c;
+
   transform: translateY(-1px);
 }
 
@@ -528,6 +531,63 @@ body {
   Lakeview Assembly of God • Lake Milton, Ohio
 
 </footer>
+
+
+
+<!-- =====================================
+     GA4 EXTERNAL LINK TRACKING
+====================================== -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const trackedLinks =
+    document.querySelectorAll('[data-ga-event]');
+
+  trackedLinks.forEach(function(link) {
+
+    link.addEventListener('click', function() {
+
+      const eventName =
+        this.dataset.gaEvent;
+
+      const eventTitle =
+        this.dataset.gaTitle;
+
+      const actionType =
+        this.dataset.gaAction;
+
+      const linkUrl =
+        this.href;
+
+
+      gtag('event', eventName, {
+
+        event_title: eventTitle,
+        action_type: actionType,
+        event_month: 'December',
+        link_url: linkUrl,
+        link_text: this.innerText.trim(),
+
+        transport_type: 'beacon'
+
+      });
+
+
+      console.log(
+        'GA4 Event Sent:',
+        eventName,
+        eventTitle
+      );
+
+    });
+
+  });
+
+});
+
+</script>
 
 
 </body>
