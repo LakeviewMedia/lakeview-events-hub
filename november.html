@@ -7,6 +7,7 @@
 
 <title>November Events | Lakeview Assembly</title>
 
+
 <!-- =====================================
      GOOGLE ANALYTICS 4
 ====================================== -->
@@ -29,6 +30,7 @@
 
 
 <style>
+
 
 /* =================================
    GLOBAL
@@ -301,6 +303,162 @@ body {
   transform: translateY(-1px);
 }
 
+.event-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.event-actions .event-button {
+  margin-top: 0;
+}
+
+/* =================================
+   STEEL VALLEY MISSIONS WEEK
+================================= */
+
+.missions-feature {
+  grid-column: 1 / -1;
+}
+
+.missions-feature .event-description {
+  flex-grow: 0;
+}
+
+.missions-schedule {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+
+  margin-top: 14px;
+}
+
+.missions-sub-event {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  background: #f6f8fb;
+
+  border: 1px solid rgba(8,47,91,.08);
+  border-radius: 14px;
+
+  overflow: hidden;
+}
+
+.missions-sub-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: #ffffff;
+}
+
+.missions-sub-body {
+  display: flex;
+  gap: 20px;
+
+  padding: 22px;
+}
+
+.missions-date-box {
+  flex: 0 0 72px;
+
+  text-align: center;
+
+  color: #082f5b;
+}
+
+.missions-day {
+  display: block;
+
+  color: #082f5b;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: .10em;
+}
+
+.missions-number {
+  display: block;
+
+  margin: 4px 0;
+
+  color: #f7941d;
+
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.missions-month {
+  display: block;
+
+  color: #082f5b;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: .10em;
+}
+
+.missions-sub-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.missions-sub-details h4 {
+  margin: 0 0 7px;
+
+  color: #082f5b;
+
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.missions-time {
+  margin: 0 0 12px;
+
+  color: #18324a;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.missions-location {
+  margin: 0 0 16px;
+
+  color: #667788;
+
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.missions-sub-details .event-description {
+  margin-bottom: 18px;
+}
+
+.registration-coming {
+  display: inline-block;
+
+  padding: 10px 16px;
+
+  background: #e8edf2;
+  color: #52606d;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
 
 /* =================================
    FOOTER
@@ -366,6 +524,32 @@ body {
   .event-title {
     font-size: 22px;
   }
+
+
+  /* STEEL VALLEY MOBILE */
+
+  .missions-schedule {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .missions-sub-body {
+    gap: 14px;
+    padding: 17px;
+  }
+
+  .missions-date-box {
+    flex-basis: 58px;
+  }
+
+  .missions-number {
+    font-size: 34px;
+  }
+
+  .missions-sub-details h4 {
+    font-size: 20px;
+  }
+
 
   .footer {
     padding: 24px 15px;
@@ -440,6 +624,41 @@ body {
 
   <div class="event-grid">
 
+    <!-- =================================
+          FEATURED - 90 DAY PRAYER CHALLENGE
+    ================================== -->
+
+    <article class="event-card featured">
+
+      <img
+        class="event-image"
+        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/10%20-%20October/90%20day%20prayer%20challenge.jpg"
+        alt="90 Day Prayer Challenge">
+
+      <div class="event-info">
+
+        <div class="event-date">
+          All Month
+        </div>
+
+        <h3 class="event-title">
+          90 Day Prayer Challenge
+        </h3>
+
+        <p class="event-description">
+          Join us for a 90-Day Prayer Challenge from October 1 
+          through December 31 as we intentionally pray together for 
+          three key areas of our church: our building, our ministries, 
+          and our daycare. Over these 90 days, we’re believing God to 
+          strengthen our church, guide our ministries, and impact the 
+          next generation.
+          <br><br>
+
+        </p>
+
+      </div>
+
+    </article>
 
     <!-- =================================
          FEATURED - OCC SHOEBOX
@@ -500,16 +719,514 @@ body {
 
     </article>
 
+
+
     <!-- =================================
-         Water Baptism
+         STEEL VALLEY MISSIONS WEEK
+    ================================== -->
+
+    <article class="event-card featured missions-feature">
+
+      <img
+        class="event-image"
+        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/11%20-%20November/Steel%20Valley%20Missions%20Week%20Overview.png"
+        alt="Steel Valley Missions Week">
+
+      <div class="event-info">
+
+        <div class="event-date">
+          November 2026
+        </div>
+
+        <h3 class="event-title">
+          Steel Valley Missions Week
+        </h3>
+
+        <p class="event-description">
+          Join churches throughout the Steel Valley for a special
+          week focused on missions, fellowship, encouragement,
+          and reaching our communities and world with the Gospel.
+        </p>
+
+
+        <div class="missions-schedule">
+
+          <!-- =================================
+               Wednesday - NEW LIFE SERVICE
+          ================================== -->
+
+          <div class="missions-sub-event">
+
+            <img
+    class="missions-sub-image"
+    src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/11%20-%20November/Evenign%20Service%2011-4.png"
+    alt="Steel Valley Missions Week Evening Service">
+
+            <div class="missions-sub-body">
+
+              <div class="missions-date-box">
+
+                <span class="missions-day">
+                  WED
+                </span>
+
+                <span class="missions-number">
+                  4
+                </span>
+
+                <span class="missions-month">
+                  NOV
+                </span>
+
+              </div>
+
+
+              <div class="missions-sub-details">
+
+                <h4>
+                  Service at New Life Poland
+                </h4>
+
+                <p class="missions-time">
+                  Wednesday, November 4 • 6:30 PM
+                </p>
+
+                <p class="missions-location">
+                  <strong>New Life Church</strong><br>
+                  2250 E Western Reserve Rd<br>
+                  Poland, OH 44514
+                </p>
+
+                <p class="event-description">
+                  Join us at New Life Church in Poland on <strong>Wednesday, November 4th</strong> 
+                  as we kick off <strong>Steel Valley Missions Week</strong>! Churches from across 
+                  the Valley will come together for a special evening of <strong>worship, 
+                  prayer, and missions</strong>, uniting around God’s call to reach our 
+                  communities, our nation, and the world with the Gospel.
+                  <br><br>
+
+                  Come ready to be encouraged, challenged, and inspired as we begin a week 
+                  focused on <strong>local churches making a global impact</strong>.
+                </p>
+
+                <a class="event-button"
+                  href="https://ourlakeviewchurch.churchcenter.com/people/forms/1322327"
+                  target="_blank"
+                  rel="noopener"
+                  data-ga-event="New_Life_Service_click"
+                  data-ga-title="New Life Service"
+                  data-ga-action="registration"
+                >
+                  Register Here
+                </a>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- =================================
+               FRIDAY - LADIES MISSIONS FELLOWSHIP
+          ================================== -->
+
+          <div class="missions-sub-event">
+
+            <img
+              class="missions-sub-image"
+              src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/11%20-%20November/Ladies%20Missions%20Fellowship.png"
+              alt="Ladies Missions Fellowship">
+
+            <div class="missions-sub-body">
+
+              <div class="missions-date-box">
+
+                <span class="missions-day">
+                  FRI
+                </span>
+
+                <span class="missions-number">
+                  6
+                </span>
+
+                <span class="missions-month">
+                  NOV
+                </span>
+
+              </div>
+
+
+              <div class="missions-sub-details">
+
+                <h4>
+                  Ladies Missions Fellowship
+                </h4>
+
+                <p class="missions-time">
+                  Friday, November 6 • 6:30 PM
+                </p>
+
+                <p class="missions-location">
+                  <strong>Metro Assembly of God</strong><br>
+                  2530 South Ave<br>
+                  Youngstown, OH 44502
+                </p>
+
+                <p class="event-description">
+                  Join women from across the Steel Valley for a special night of
+                  <strong>fellowship, encouragement, and inspiration</strong>
+                  as we gather around the table with women who are faithfully
+                  serving Jesus around the world.
+                  <br><br>
+
+                  This is an opportunity to hear firsthand how God is moving among
+                  the nations through the lives of courageous women who have answered
+                  His call to go. Together, we'll enjoy a delicious dinner, meaningful
+                  conversation, heartfelt worship, and inspiring testimonies from women
+                  serving on the mission field.
+                </p>
+
+                <a class="event-button"
+                  href="https://ourlakeviewchurch.churchcenter.com/people/forms/1322354"
+                  target="_blank"
+                  rel="noopener"
+                  data-ga-event="Ladies_Mission_Fellowship_click"
+                  data-ga-title="Ladies Missions Fellowship"
+          data-ga-action="registration"
+                >
+                  Register Here
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+          
+          <!-- =================================
+               SATURDAY - MEN'S MISSIONS FELLOWSHIP
+          ================================== -->
+
+          <div class="missions-sub-event">
+            <img
+  class="missions-sub-image"
+  src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/11%20-%20November/Mens%20Mission%20Breakfast.png"
+  alt="Men's Missions Breakfast">
+
+            <div class="missions-sub-body">
+
+              <div class="missions-date-box">
+
+                <span class="missions-day">
+                  SAT
+                </span>
+
+                <span class="missions-number">
+                  7
+                </span>
+
+                <span class="missions-month">
+                  NOV
+                </span>
+
+              </div>
+
+
+              <div class="missions-sub-details">
+
+                <h4>
+                  Men's Missions Breakfast
+                </h4>
+
+                <p class="missions-time">
+                  Saturday, November 7 • 9:00 AM
+                </p>
+
+                <p class="missions-location">
+                  <strong>Lakeview Assembly of God</strong><br>
+                  17930 Mahoning Avenue<br>
+                  Lake Milton, OH 44429
+                </p>
+
+                <p class="event-description">
+                  Join us for one of the most encouraging gatherings of the
+                  Steel Valley Missions Conference! It's an opportunity to sit
+                  around the table with World Missionaries, hear firsthand what
+                  God is doing around the world, and discover how He is using
+                  ordinary men to <strong>accomplish extraordinary things for
+                  His Kingdom.</strong>
+                  <br><br>
+
+                  Whether you've served on a missions trip, support missionaries
+                  from home, or simply want to learn more about God's work among
+                  the nations, this breakfast is designed to encourage, challenge,
+                  and inspire you.
+                </p>
+
+                <div class="event-actions">
+
+  <a class="event-button"
+     href="https://ourlakeviewchurch.churchcenter.com/people/forms/1322362"
+     target="_blank"
+     rel="noopener"
+     data-ga-event="Mens_Mission_Fellowship_click"
+     data-ga-title="Mens Missions Fellowship"
+     data-ga-action="registration">
+    Register Here
+  </a>
+
+  <a class="event-button"
+     href="https://ourlakeviewchurch.churchcenter.com/people/forms/1323606"
+     target="_blank"
+     rel="noopener"
+     data-ga-event="Mens_Mission_Fellowship_Volunteer_click"
+     data-ga-title="Mens Missions Fellowship Volunteer"
+     data-ga-action="volunteer">
+    Volunteer to Help
+  </a>
+
+</div>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+          <!-- =================================
+               SATURDAY - OPEN ACCESS DINNER
+          ================================== -->
+
+          <div class="missions-sub-event">
+            <img
+  class="missions-sub-image"
+  src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/11%20-%20November/deFrietas%20Open%20Access%20Dinner.png.png"
+  alt="deFrietas Open Access Dinner">
+
+            <div class="missions-sub-body">
+
+              <div class="missions-date-box">
+
+                <span class="missions-day">
+                  SAT
+                </span>
+
+                <span class="missions-number">
+                  7
+                </span>
+
+                <span class="missions-month">
+                  NOV
+                </span>
+
+              </div>
+
+
+              <div class="missions-sub-details">
+
+                <h4>
+                  deFrietas Open Access Dinner
+                </h4>
+
+                <p class="missions-time">
+                  Saturday, November 7 • TBD
+                </p>
+
+                <p class="missions-location">
+                  <strong>Lakeview Assembly of God</strong><br>
+                  17930 Mahoning Avenue<br>
+                  Lake Milton, OH 44429
+                </p>
+
+                <p class="event-description">
+  Join us for a special <strong>Open Access Dinner</strong> during
+  Steel Valley Missions Week as we welcome AGWM missionaries
+  <strong>Nelson and Rennae deFreitas</strong>. Come hear how God
+  is working around the world and discover what it means for each
+  of us to be part of His mission.
+  <br><br>
+
+  Nelson and Rennae have spent more than 30 years serving with AGWM,
+  including 20 years in the Dominican Republic. Today, they help
+  mobilize and equip the next generation of global workers to reach
+  the unreached with the Gospel.
+  <br><br>
+
+  Come enjoy an evening of <strong>connection, encouragement, prayer,
+  and missions</strong> as we learn how we can work together for a
+  global Gospel.
+</p>
+
+                <a class="event-button"
+                  href="https://ourlakeviewchurch.churchcenter.com/people/forms/1322366"
+                  target="_blank"
+                  rel="noopener"
+                  data-ga-event="Open_Access_Dinner_click"
+                  data-ga-title="Open Access Dinner"
+                  data-ga-action="registration"
+                >
+                  Register Here
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+         <!-- =================================
+     SUNDAY - JAY & CAREY ROSTORFER
+================================== -->
+
+<div class="missions-sub-event">
+
+  <img
+    class="missions-sub-image"
+    src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/11%20-%20November/Rostorfers%2011-8.png"
+    alt="Jay and Carey Rostorfer - November 8">
+
+  <div class="missions-sub-body">
+
+    <div class="missions-date-box">
+
+      <span class="missions-day">
+        SUN
+      </span>
+
+      <span class="missions-number">
+        8
+      </span>
+
+      <span class="missions-month">
+        NOV
+      </span>
+
+    </div>
+
+
+    <div class="missions-sub-details">
+
+      <h4>
+        Jay and Carey Rostorfer - Guest Speakers
+      </h4>
+
+      <p class="missions-time">
+        Sunday, November 8 • 10:00 AM
+      </p>
+
+      <p class="missions-location">
+        <strong>Lakeview Assembly of God</strong><br>
+        17930 Mahoning Avenue<br>
+        Lake Milton, OH 44429
+      </p>
+
+      <p class="event-description">
+        Join us Sunday morning as we welcome Jay and Carey Rostorfer,
+        missionaries to Madagascar for 20 years.
+        <br><br>
+
+        Jay has helped plant and establish churches, held evangelistic
+        crusades, trained future pastors, and serves as the AGWM team
+        leader for Madagascar.
+        <br><br>
+
+        Carey works closely with the National Women's Ministry,
+        encouraging and discipling female pastors, pastors' wives,
+        ministry leaders, and women throughout the church.
+        <br><br>
+
+        Come hear how God is working through their ministry in Madagascar
+        and around the world.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+         <!-- =================================
+     SUNDAY - International Fest
+================================== -->
+
+<div class="missions-sub-event">
+
+  <img
+  class="missions-sub-image"
+  src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/11%20-%20November/International%20Fest.png"
+  alt="International Fest">
+
+  <div class="missions-sub-body">
+
+    <div class="missions-date-box">
+
+      <span class="missions-day">
+        SUN
+      </span>
+
+      <span class="missions-number">
+        8
+      </span>
+
+      <span class="missions-month">
+        NOV
+      </span>
+
+    </div>
+
+
+    <div class="missions-sub-details">
+
+      <h4>
+        International Fest
+      </h4>
+
+      <p class="missions-time">
+        Sunday, November 8 • 6:00 PM
+      </p>
+
+      <p class="missions-location">
+        <strong>Highway Tabernacle</strong><br>
+        3000 S Raccoon Road<br>
+        Youngstown, OH 44515
+      </p>
+
+      <p class="event-description">
+        <STRONG>International Fest</STRONG> is a special celebration bringing people together 
+        to experience cultures from around the world through food, fellowship, 
+        and community. Join us during <STRONG>Steel Valley Missions Week</STRONG> as we celebrate 
+        the nations and remember that, across different cultures and backgrounds, 
+        we are <STRONG>one family united by one Gospel</STRONG>.
+        <br><br>
+
+        <STRONG>Tickets are $15</STRONG> and are available in the church office on a 
+        <STRONG>first-come, first-served basis</STRONG>.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+        </div>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =================================
+         WATER BAPTISM
     ================================== -->
 
     <article class="event-card">
 
-    <img
-  class="event-image"
-  src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/11%20-%20November/Water%20Baptsim%2011-1-26.jpg"
-  alt="Water Baptism">
+      <img
+        class="event-image"
+        src="https://raw.githubusercontent.com/LakeviewMedia/lakeviewevents/main/11%20-%20November/Water%20Baptsim%2011-1-26.jpg"
+        alt="Water Baptism">
 
       <div class="event-info">
 
@@ -522,9 +1239,9 @@ body {
         </h3>
 
         <p class="event-description">
-          If you are interested in taking the next step of water 
-          baptism, please fill out the information below. We will 
-          follow up to ensure you attend our brief class for 
+          If you are interested in taking the next step of water
+          baptism, please fill out the information below. We will
+          follow up to ensure you attend our brief class for
           further instruction.
         </p>
 
@@ -543,7 +1260,9 @@ body {
       </div>
 
     </article>
-       
+
+
+
     <!-- =================================
          2026 YOUTH CONFERENCE
     ================================== -->
@@ -637,15 +1356,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
       gtag('event', eventName, {
 
-  event_title: eventTitle,
-  action_type: actionType,
-  event_month: 'November',
-  link_url: linkUrl,
-  link_text: this.innerText.trim(),
+        event_title: eventTitle,
+        action_type: actionType,
+        event_month: 'November',
+        link_url: linkUrl,
+        link_text: this.innerText.trim(),
 
-  transport_type: 'beacon'
+        transport_type: 'beacon'
 
-});
+      });
 
 
       console.log(
